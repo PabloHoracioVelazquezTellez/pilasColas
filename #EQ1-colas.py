@@ -1,3 +1,4 @@
+#importamos la clase deque que incluye varios metodos para poder trabajar con colas
 from collections import deque
 
 class BancoMultiFila:

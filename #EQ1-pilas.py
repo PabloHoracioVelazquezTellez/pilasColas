@@ -1,3 +1,6 @@
+#Para el manejo de pilas python trae de manera predeterminada multiples metodos para
+#realizar las acciones push, pop y peek, no existe mas que el metodo pop con el nombre tal cual
+#las otras dos operaciones funcionan con metodos o logicas simples que cumplen con su funcion
 class EditorTexto:
     def __init__(self, capacidad_maxima=10):
         #AQUI DEFINIMOS UNA PILA A LA CUAL SE LE DEFINE UNA CAPACIDAD MAXIMA EN LA EJECUCION DEL PROGRAMA
