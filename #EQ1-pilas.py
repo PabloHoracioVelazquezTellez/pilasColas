@@ -6,41 +6,41 @@ class EditorTexto:
 
     def pushEscribir(self, texto):
         #OPERACION PUSH PARA AGREGAR TEXTO
-        if not self.pilaLlena():
-            self.pila.append(texto)
+        if not self.pilaLlena():#validamos que la pila tenga espacio
+            self.pila.append(texto)#usando el metodo append, equivalente a push agregamos el dato a ala pila
             print(f"Se escribio: '{texto}'")
         else:
             print("PILA LLENA NO SE PUEDE ESCRIBIR MAS...") #SI LA PILA ESTA LLENA YA NO PODEMOS AGREGAR NADA
 
     def popDeshacer(self):
         #POP PARA BORRAR EL ULTIMO TEXTO ESCRITO
-        if not self.pilaVacia():
-            ultima_accion=self.pila.pop()
+        if not self.pilaVacia():#validamos que la pila tenga datos para borrar
+            ultima_accion=self.pila.pop()#usando el metodo pop, eliminamos el ultimo dato ingresado
             print(f"Deshacer: '{ultima_accion}'")
         else:
             print("PILA VACÍA.")
 
     def peekUltimaAccion(self):
         #PEEK PARA MOSTRAR NUESTRO ULTIMO TEXTO AGREGADO
-        if not self.pilaVacia():
+        if not self.pilaVacia():#validamos que la pila tenga datos para mostrar
             print(f"Ultima accion: '{self.pila[-1]}'")#SE REVISA EL ULTIMO INDICE DE LA LISTA
-        else:
-            print("PILA VACÍA.")
+        else:                                           #el indice -1 cumple la funcion peek en python
+            print("PILA VACÍA.")                        #no hay definido un metodo llamada como tal peek
 
     def pilaVacia(self):
         #VERIFICAMOS EL ESTADO DE LA PILA
-        return len(self.pila)==0
+        return len(self.pila)==0#si la longitud de la pila es =0 devolvemos True
 
     def pilaLlena(self):
         #VERIFICAMOS SI LA PILA ESTA LLENA
-        return len(self.pila)>=self.capacidad_maxima
+        return len(self.pila)>=self.capacidad_maxima#si la lingitud de la pila es = a su capacidad, devolcemos True
 
     def recorrerPila(self):
         #SE MUESTRAN LOS ELEMENTOS DE LA PILA DEL ULTIMO AL PRIMERO
         print("\nHistorial de cambios:")
         if self.pila:
-            for i, accion in enumerate(reversed(self.pila), 1):
-                print(f"{i}. {accion}")
+            for i, accion in enumerate(reversed(self.pila), 1): #con la clase reversed damos una iteracion invertida a la pila
+                print(f"{i}. {accion}")                         #para mostrar los datos de esta desde el ultimo al primero
         else:
             print("No hay cambios registrados.")
         print()
